@@ -5,8 +5,6 @@
 #include <string>
 
 using namespace std;
-
-
 class Livre
 {
 private:
@@ -14,26 +12,26 @@ private:
     string titre;
     string auteur;
     string isbn;
-    bool disponible = false;
+    bool disponible;
 
 public:
     /*Construteur*/
-    Livre(const string& titre, const string& auteur, const string& isbn);
+    Livre(const string& titre, const string& auteur, const string& isbn, bool disponible);
 
     /*Descontructeur*/
     //~Livre();
 
     /*Accesseurs*/
-    void getTitre() const;
-    void getAuteur() const;
-    void getIsbn() const;
+    string getTitre() const;
+    string getAuteur() const;
+    string getIsbn() const;
     bool getDisponible() const;
 
     /*Mutateurs*/
     void setTitre( const string& titre);
     void setAuteur( const string& auteur);
     void setIsbn( const string& isbn);
-    void setDisponible( bool disponible);
+    bool setDisponible( bool disponible);
     
     /*Méthodes*/
     void afficherInfos();
