@@ -31,7 +31,7 @@ public:
     void setTitre( const string& titre);
     void setAuteur( const string& auteur);
     void setIsbn( const string& isbn);
-    bool setDisponible( bool disponible);
+    void setDisponible( bool disponible);
     
     /*Méthodes*/
     void afficherInfos();

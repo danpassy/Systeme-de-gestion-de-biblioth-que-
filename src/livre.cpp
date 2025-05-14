@@ -36,7 +36,25 @@ string Livre::getIsbn() const
 {
     return isbn;
 }
-
+bool Livre::getDisponible() const
+{
+    return disponible;
+}
 
 /*Mutateurs*/
+
+void Livre::setTitre(const string &titre)
+{
+    this->titre = titre;
+}
+
+void Livre::setAuteur(const string &auteur)
+{
+    this->auteur = auteur;
+}
+void Livre::setDisponible(bool disponible)
+{
+    this->disponible = true;
+}
+
 
