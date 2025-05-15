@@ -34,9 +34,7 @@ public:
     
     /*Méthodes*/
     void afficherInfos() const;
-
     void emprunter();
-
     void rendre();
 };
 

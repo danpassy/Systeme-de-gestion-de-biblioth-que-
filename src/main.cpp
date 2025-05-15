@@ -1,30 +1,44 @@
 #include <iostream>
 #include "livre.h"
+#include "utilisateur.h"
 
-//test livre
-int main(){
+#include "utilisateur.h"
+#include "livre.h"
+#include <iostream>
 
-     // Créer un livre
-    Livre monLivre("Le Petit Prince", "Antoine de Saint-Exupéry", "978-2-07-061275-8", 3);
+//test utilisateur
+int main() {
+    // Création d'un utilisateur
+    Utilisateur utilisateur("Dupont", "Jean", 101);
 
-    std::cout << "\n--- Infos initiales du livre ---\n";
-    monLivre.afficherInfos();
+    // Affichage des infos de l'utilisateur
+    std::cout << "\n--- Infos de l'utilisateur ---\n";
+    utilisateur.afficherInfos();
 
-    // Emprunter un livre
-    std::cout << "\n--- Emprunter un exemplaire ---\n";
-    monLivre.emprunter();
+    // Création de quelques livres
+    Livre livre1("Le Petit Prince", "Antoine de Saint-Exupéry", "978-2-07-061275-8", 2);
+    Livre livre2("1984", "George Orwell", "978-0-452-28423-4", 1);
 
-    // Afficher les infos après emprunt
-    std::cout << "\n--- Infos après emprunt ---\n";
-    monLivre.afficherInfos();
+    // Affichage des infos des livres
+    std::cout << "\n--- Infos des livres ---\n";
+    livre1.afficherInfos();
+    livre2.afficherInfos();
 
-    // Rendre un livre
-    std::cout << "\n--- Rendre un exemplaire ---\n";
-    monLivre.rendre();
+    // L'utilisateur emprunte un livre
+    std::cout << "\n--- Emprunt d'un livre par l'utilisateur ---\n";
+    utilisateur.emprunterLivre(livre1);
 
-    // Afficher les infos après retour
-    std::cout << "\n--- Infos après retour ---\n";
-    monLivre.afficherInfos();
+    // Affichage des infos du livre après emprunt
+    std::cout << "\n--- Infos du livre après emprunt ---\n";
+    livre1.afficherInfos();
+
+    // L'utilisateur rend le livre
+    std::cout << "\n--- Retour du livre par l'utilisateur ---\n";
+    utilisateur.rendreLivre(livre1);
+
+    // Affichage des infos du livre après retour
+    std::cout << "\n--- Infos du livre après retour ---\n";
+    livre1.afficherInfos();
 
     return 0;
 }
