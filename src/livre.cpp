@@ -1,60 +1,78 @@
 #include "livre.h"
+#include <iostream>
+
+using namespace std;
+
 /*Constructeur */
-Livre::Livre(const string &titre, const string &auteur, const string &isbn, bool disponible)
+Livre::Livre(const string &titre, const string &auteur, const string &isbn,int nombreExemplaire):
+    titre_(titre), auteur_(auteur), isbn_(isbn), nombreExemplaire_(nombreExemplaire)
 {
-    this->titre = titre; // le this permet de distinguer l'attibut du paramétre this->titre  = attribut et titre = parametre du constructeur
-    this->auteur = auteur;
-    this->isbn =isbn;
-    this->disponible = disponible;
-    cout << "Le contruteur a éte initialisé" << endl;
+    cout << "Le construteur a éte initialisé" << endl;
 }
-/* De façon plus moderne on peut définir un constructeur comme suit: 
-private:
-    string titre_;
-    string auteur_;
-    string isbn_;
-
-
-Livre::Livre(const string &titre, const string &auteur, const string &isbn) 
-    : titre_(titre), auteur_(auteur), isbn_(isn){
-    cout << " Le contruteur a été initialisé "<<endl;}
-
-*/
 
 /*Accesseurs*/
+
 string Livre::getTitre() const
 {
-    return titre;
+    return titre_;
 }
 
 string Livre::getAuteur() const
 {
-    return auteur;
+    return auteur_;
 }
 
 string Livre::getIsbn() const
 {
-    return isbn;
+    return isbn_;
 }
-bool Livre::getDisponible() const
+int  Livre::getNombreExemplaire() const
 {
-    return disponible;
+    return nombreExemplaire_;
 }
 
 /*Mutateurs*/
 
 void Livre::setTitre(const string &titre)
 {
-    this->titre = titre;
+    titre_ = titre;
 }
 
 void Livre::setAuteur(const string &auteur)
 {
-    this->auteur = auteur;
+    auteur_ = auteur;
 }
-void Livre::setDisponible(bool disponible)
+
+void Livre::setIsbn( const string &isbn)
 {
-    this->disponible = true;
+    isbn_ = isbn;
 }
 
+void Livre::setNombreExemplaire(int nombreExemplaire)
+{
+    nombreExemplaire_ = nombreExemplaire;
+}
 
+// affiche les infos d'un livre 
+void Livre::afficherInfos() const
+{
+    cout << "Titre du livre: " << titre_ << "\nNom de l'auteur: " << auteur_ << "\nDisponiblité: " << nombreExemplaire_ <<"."<< endl;
+}
+
+//afficher si le livre est disponible ou pas
+void Livre::emprunter()
+{
+    if( nombreExemplaire_ > 0){
+        --nombreExemplaire_;
+        cout << "Livre  emprunté avec succes. nombre d'exemplaires restants: " << nombreExemplaire_ << endl;
+    }
+    else{
+        cout << "Aucun Exemplaire disponible" <<endl;
+    }
+}
+
+void Livre::rendre()
+{
+    ++nombreExemplaire_;
+    cout << "Livre rendu avec succes: nombre d'exemplaire diponible: " << nombreExemplaire_<< endl;
+}

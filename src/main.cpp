@@ -1,5 +1,35 @@
 #include <iostream>
+#include "livre.h"
 
+//test livre
+int main(){
+
+     // Créer un livre
+    Livre monLivre("Le Petit Prince", "Antoine de Saint-Exupéry", "978-2-07-061275-8", 3);
+
+    std::cout << "\n--- Infos initiales du livre ---\n";
+    monLivre.afficherInfos();
+
+    // Emprunter un livre
+    std::cout << "\n--- Emprunter un exemplaire ---\n";
+    monLivre.emprunter();
+
+    // Afficher les infos après emprunt
+    std::cout << "\n--- Infos après emprunt ---\n";
+    monLivre.afficherInfos();
+
+    // Rendre un livre
+    std::cout << "\n--- Rendre un exemplaire ---\n";
+    monLivre.rendre();
+
+    // Afficher les infos après retour
+    std::cout << "\n--- Infos après retour ---\n";
+    monLivre.afficherInfos();
+
+    return 0;
+}
+
+/*
 void printMessage(){
     std::cout << "=========================================================\n";
     std::cout << "       Welcome to your Virtual Bibliotheque!\n";
@@ -50,3 +80,4 @@ int main(int, char**){
 
     return 0;
 }
+*/

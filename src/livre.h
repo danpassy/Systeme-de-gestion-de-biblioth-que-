@@ -1,40 +1,39 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
-#include <iostream>
 #include <string>
 
-using namespace std;
+
 class Livre
 {
 private:
     /* Attributs*/
-    string titre;
-    string auteur;
-    string isbn;
-    bool disponible;
+    std::string titre_;
+    std::string auteur_;
+    std::string isbn_;
+    int nombreExemplaire_{0};
 
 public:
     /*Construteur*/
-    Livre(const string& titre, const string& auteur, const string& isbn, bool disponible);
+    Livre(const std::string& titre, const std::string& auteur, const std::string& isbn, int nombreExemplaire);
 
     /*Descontructeur*/
     //~Livre();
 
     /*Accesseurs*/
-    string getTitre() const;
-    string getAuteur() const;
-    string getIsbn() const;
-    bool getDisponible() const;
+    std::string getTitre() const;
+    std::string getAuteur() const;
+    std::string getIsbn() const;
+    int getNombreExemplaire() const;
 
     /*Mutateurs*/
-    void setTitre( const string& titre);
-    void setAuteur( const string& auteur);
-    void setIsbn( const string& isbn);
-    void setDisponible( bool disponible);
+    void setTitre( const std::string& titre);
+    void setAuteur( const std::string& auteur);
+    void setIsbn( const std::string& isbn);
+    void setNombreExemplaire(int nombreExemeplaire);
     
     /*Méthodes*/
-    void afficherInfos();
+    void afficherInfos() const;
 
     void emprunter();
 
