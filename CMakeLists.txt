@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(cpp_bibliotheque VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(cpp_bibliotheque src/main.cpp src/livre.cpp src/utilisateur.cpp)
+add_executable(cpp_bibliotheque src/main.cpp src/livre.cpp src/utilisateur.cpp src/professeur.cpp src/etudiant.cpp)
 
 include(CTest)
 enable_testing()

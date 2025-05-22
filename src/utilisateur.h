@@ -6,6 +6,7 @@
 class Livre;
 
 class Utilisateur {
+    //attributs
     private:
     std::string nom_;
     std:: string prenom_;

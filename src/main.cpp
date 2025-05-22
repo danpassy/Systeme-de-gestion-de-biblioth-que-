@@ -1,8 +1,8 @@
 #include <iostream>
 #include "livre.h"
 #include "utilisateur.h"
-
-#include "utilisateur.h"
+#include "etudiant.h"
+#include "professeur.h"
 #include "livre.h"
 #include <iostream>
 
@@ -39,6 +39,17 @@ int main() {
     // Affichage des infos du livre après retour
     std::cout << "\n--- Infos du livre après retour ---\n";
     livre1.afficherInfos();
+
+
+    // Test Etudiant
+    std::cout << "\n--- infos Etudiant ---\n";
+    Etudiant etu("Bouchard", "Loic", 2);
+    etu.afficherInfos();
+
+    //Test Professeur
+    std::cout << "\n--- Infos deu Professeur ---\n";
+    Professeur prof("TOTO", "Loic", 3);
+    prof.afficherInfos();
 
     return 0;
 }
